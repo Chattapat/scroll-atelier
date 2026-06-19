@@ -259,6 +259,44 @@ h1, h2 { font-weight: 400; letter-spacing: -0.02em; line-height: 1.02; }
   letter-spacing: 0.12em; text-transform: uppercase;
 }
 
+/* ---------- Scene III — Manifesto (full-bleed statement) ---------- */
+.manifesto { position: relative; min-height: 100vh; display: grid; place-items: center; padding: clamp(80px, 14vh, 180px) 20px; overflow: hidden; background: #0c0e15; }
+.manifesto::before { content: ""; position: absolute; inset: 0; background: url("/art/fusion.jpg") center / cover; opacity: 0.5; }
+.manifesto-veil { position: absolute; inset: 0; background: radial-gradient(70% 60% at 50% 50%, rgba(10,11,16,0.35), rgba(10,11,16,0.88)); }
+.manifesto-inner { position: relative; z-index: 2; max-width: 1100px; text-align: center; display: flex; flex-direction: column; gap: clamp(14px, 2.4vh, 30px); }
+.manifesto-inner .eyebrow { margin-bottom: 0.8rem; }
+.manifesto-line { font-size: clamp(1.8rem, 5.5vw, 4rem); line-height: 1.06; color: var(--ink); }
+
+/* ---------- Scene V — Specimens (catalogue grid) ---------- */
+.specimens { max-width: var(--maxw); margin-inline: auto; padding: clamp(70px, 12vh, 160px) clamp(20px, 5vw, 48px); }
+.spec-head { text-align: center; margin-bottom: clamp(36px, 6vh, 72px); }
+.spec-head h2 { font-size: clamp(2rem, 5vw, 3.4rem); margin: 0.5rem 0; }
+.spec-head p { color: var(--muted); }
+.spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.5vw, 32px); }
+.spec-card { border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.025); padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.spec-thumb { aspect-ratio: 4 / 3; display: grid; place-items: center; }
+.spec-thumb img { max-width: 78%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 14px 18px rgba(0,0,0,0.5)); }
+.spec-meta { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px; }
+.spec-no { font-family: ui-monospace, monospace; color: var(--gold-2); font-size: 0.8rem; }
+.spec-tag { font-family: ui-monospace, monospace; color: var(--muted); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ---------- Scene VI — Assembly / Unboxing (pinned collide + reveal) ---------- */
+.unbox { position: relative; height: 100vh; overflow: hidden; }
+.ub-stage { position: relative; width: 100%; height: 100%; display: grid; place-items: center; }
+.ub-stage > img, .ub-ring { grid-column: 1; grid-row: 1; }
+.ub-piece { width: clamp(70px, 9vw, 150px); height: auto; will-change: transform; filter: drop-shadow(0 14px 18px rgba(0,0,0,0.5)); }
+.ub-core { width: clamp(120px, 16vw, 260px); height: auto; will-change: transform; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.55)); }
+.ub-ring { width: min(42vw, 380px); height: min(42vw, 380px); border: 2px solid var(--gold-2); border-radius: 50%; }
+.ub-eyebrow { position: absolute; top: 8vh; left: 0; right: 0; text-align: center; z-index: 3; }
+.ub-title { position: absolute; bottom: 10vh; left: 0; right: 0; text-align: center; z-index: 3; font-size: clamp(2.4rem, 7vw, 5rem); }
+
+/* ---------- Scene VIII — Ethos (big numbers) ---------- */
+.ethos { max-width: var(--maxw); margin-inline: auto; padding: clamp(70px, 12vh, 150px) clamp(20px, 5vw, 48px); }
+.ethos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 3vw, 48px); }
+.ethos-cell { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 18px; }
+.ethos-num { font-size: clamp(2.6rem, 6vw, 4.6rem); color: var(--gold-2); line-height: 1; }
+.ethos-label { color: var(--muted); font-size: 0.95rem; }
+
 /* ---------- Reveal helper ---------- */
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
@@ -268,11 +306,15 @@ h1, h2 { font-weight: 400; letter-spacing: -0.02em; line-height: 1.02; }
 @media (min-width: 821px) {
   .about-grid { padding-left: clamp(220px, 18vw, 300px); }
   .works-intro { margin-left: clamp(180px, 14vw, 240px); }
+  .specimens { padding-left: clamp(60px, 13vw, 250px); }
+  .ethos { padding-left: clamp(60px, 13vw, 250px); }
 }
 
 @media (max-width: 820px) {
   .about-grid { grid-template-columns: 1fr; }
   .about-sticky { position: static; }
+  .spec-grid { grid-template-columns: repeat(2, 1fr); }
+  .ethos-grid { grid-template-columns: repeat(2, 1fr); }
   /* pinned horizontal scroll is disabled in JS on touch — fall back to native swipe */
   .works-track { width: auto; height: auto; overflow-x: auto; scroll-snap-type: x mandatory; padding-block: 64px; }
   .card { scroll-snap-align: center; }

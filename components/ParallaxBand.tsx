@@ -54,7 +54,7 @@ export default function ParallaxBand() {
         {/* eslint-enable @next/next/no-img-element */}
 
         <div className="band-copy">
-          <span className="eyebrow">Scene IV · Procession</span>
+          <span className="eyebrow">Scene VII · Procession</span>
           <h2>Layers in depth</h2>
           <p>Far drifts slow, near races past — scroll through.</p>
         </div>

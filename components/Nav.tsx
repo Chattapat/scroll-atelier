@@ -5,11 +5,15 @@ import { useEffect, useState } from "react";
 const SECTIONS = [
   { id: "hero", name: "Overture", num: "I" },
   { id: "marquee", name: "Lexicon", num: "II" },
-  { id: "works", name: "Works", num: "III" },
-  { id: "procession", name: "Procession", num: "IV" },
-  { id: "artifact", name: "Artifact", num: "V" },
-  { id: "about", name: "Atelier", num: "VI" },
-  { id: "contact", name: "Contact", num: "VII" },
+  { id: "manifesto", name: "Manifesto", num: "III" },
+  { id: "works", name: "Works", num: "IV" },
+  { id: "specimens", name: "Specimens", num: "V" },
+  { id: "unboxing", name: "Assembly", num: "VI" },
+  { id: "procession", name: "Procession", num: "VII" },
+  { id: "ethos", name: "Ethos", num: "VIII" },
+  { id: "artifact", name: "Artifact", num: "IX" },
+  { id: "about", name: "Atelier", num: "X" },
+  { id: "contact", name: "Contact", num: "XI" },
 ];
 
 /**

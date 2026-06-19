@@ -55,7 +55,7 @@ export default function Works() {
     <section id="works" ref={root} className="works">
       <div ref={track} className="works-track">
         <div className="works-intro">
-          <span className="eyebrow">Scene III</span>
+          <span className="eyebrow">Scene IV</span>
           <h2>Selected Works</h2>
           <p>Scroll to move through the gallery →</p>
         </div>

@@ -22,7 +22,7 @@ export default function About() {
       <TornCover />
       <div className="about-grid">
         <aside className="about-sticky">
-          <span className="eyebrow">Scene VI</span>
+          <span className="eyebrow">Scene X</span>
           <h2>
             An atelier
             <br /> for motion

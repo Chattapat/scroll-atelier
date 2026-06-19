@@ -36,8 +36,8 @@ export default function Home() {
         <section id="contact" className="contact">
           <span className="eyebrow">Scene VII</span>
           <h2>Let&apos;s build something that moves.</h2>
-          <a className="contact-cta" href="mailto:dev@alpholagroup.com">
-            dev@alpholagroup.com
+          <a className="contact-cta" href="#hero">
+            Get in touch ↑
           </a>
           <footer className="foot">
             <span>Scroll Atelier</span>
